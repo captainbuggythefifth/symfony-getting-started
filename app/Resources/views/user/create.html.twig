@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="wrapper">
+        <div id="container">
+            <div class="col-sm-12">
+                <form action="/user/store" method="post">
+                    <div class="form-group label-floating">
+                        <label class="control-label" for="focusedInput1">Name</label>
+                        <input class="form-control" name="name" id="focusedInput1" type="text">
+                        <p class="help-block">You should really write something here</p>
+                    </div>
+
+                    <div class="form-group label-floating">
+                        <label class="control-label" for="focusedInput2">Email</label>
+                        <input class="form-control" name="email" id="focusedInput2" type="text">
+                        <p class="help-block">You should really write something here</p>
+                    </div>
+
+                    <div class="form-group label-floating">
+                        <label class="control-label" for="focusedInput3">Username</label>
+                        <input class="form-control" name="username" id="focusedInput3" type="text">
+                        <p class="help-block">You should really write something here</p>
+                    </div>
+
+                    <div class="form-group label-floating">
+                        <label class="control-label" for="focusedInput4">Password</label>
+                        <input class="form-control" name="password" id="focusedInput4" type="password">
+                        <p class="help-block">You should really write something here</p>
+                    </div>
+
+                    {% if error is defined %}
+                    <ul>
+                        {% for error in errors %}
+                            <li>{{ error.message }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+
+                    <button type="submit" class="btn btn-raised btn-lg">Register</button>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
